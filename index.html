@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Range Slider Effect</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="img-blur"></div>
+      <div class="img-blur"></div>
+
+      <div class="img-container">
+        <h2>Part of Journey is the end</h2>
+        <img src="./avengers-transparent2.png" alt="" />
+        <div class="device">
+                <div></div>
+                <div></div>
+        </div>
+        <input
+          type="range"
+          name=""
+          id="rangeSlider"
+          value="0"
+          min="0"
+          max="100"
+          onmousemove="rangeSlider(this.value)"
+          onchange="rangeSlider(this.value)"
+        />
+      </div>
+    </div>
+
+    <script>
+      rangeSlider = (value) => {
+        document.querySelector(
+          ".img-blur:first-child"
+        ).style.width = `${value}%`;
+        document.querySelector(
+          ".device div:nth-child(2)"
+        ).style.width = `${value}%`;
+      };
+    </script>
+  </body>
+</html>
